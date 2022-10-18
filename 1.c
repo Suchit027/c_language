@@ -1,5 +1,16 @@
 #include <stdio.h>
 #include <string.h>
+void operations(){
+    float a , b;
+    a = 12;
+    b=8;
+    printf("%d",a/b);/*remember that % only takes int*/
+}
+void chartest(){
+    char a ;
+    a = 65 ;
+    printf("%c", a);
+}
 void testfloat()
 {
     float a, c;
@@ -45,7 +56,7 @@ void fortest()
 void forex()
 {
     int fahr, c;
-    for (fahr = 300; fahr >= 0; fahr = fahr - 20)
+    for (fahr = 300; fahr >= 0; fahr = fahr - 20);
         printf("%d\t%d\n", fahr, 5 * (fahr - 32) / 9);
 }
 void getput()
@@ -125,5 +136,5 @@ int strlength(char s[])
 int main()
 {
 
-   printtest();
+   chartest();
 }
