@@ -34,7 +34,20 @@ printf("The number is perfect");
 else
 printf("The number is not a perfect number");
 }
+void addquestion1(){
+    int num ;
+    printf("Enter the number");
+    scanf("%d", &num);
+    for( ; num >=10 ; ){
+        int i = 0;
+        for (; num > 0; num /= 10){
+            i = i + (num % 10) ;
+        }
+        num = i ;
+        printf("%d\n", num);
+    }
+}
 int main()
 {
-    question4();
+    addquestion1();
 }
