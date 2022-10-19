@@ -67,5 +67,5 @@ void question6(){
 }
 int main()
 {
-    question6();
+    question4();
 }
