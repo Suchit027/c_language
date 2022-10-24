@@ -27,14 +27,66 @@ void sum()
     for (int i = 0; i < 10; ++i)
     {
         scanf("%d", &s[i]);
-        if (s[i]%2 == 0)
+        if (s[i] % 2 == 0)
             sum_even = sum_even + s[i];
-        else 
+        else
             sum_odd = sum_odd + s[i];
     }
     printf("The sum of even numbers is %d and odd is %d", sum_even, sum_odd);
 }
+void sortassending()
+{
+    int s[100];
+    printf("Enter the array\n");
+    for (int i = 0; i < 10; ++i)
+    {
+        scanf("%d", &s[i]);
+    }
+    for (int i = 0; i < 10; ++i)
+    {
+        for (int j = i + 1; j < 10; ++j)
+        {
+            if (s[i] > s[j])
+            {
+                int temp;
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < 10; ++i)
+    {
+        printf("%d\t", s[i]);
+    }
+}
+void sortdescending()
+{
+    int s[100];
+    printf("Enter the array\n");
+    for (int i = 0; i < 10; ++i)
+    {
+        scanf("%d", &s[i]);
+    }
+    for (int i = 0; i < 10; ++i)
+    {
+        for (int j = i + 1; j < 10; ++j)
+        {
+            if (s[i] < s[j])
+            {
+                int temp;
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < 10; ++i)
+    {
+        printf("%d\t", s[i]);
+    }
+}
 int main()
 {
-    sum();
+    sortdescending();
 }
