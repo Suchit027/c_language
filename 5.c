@@ -19,7 +19,22 @@ void maxminarr()
     }
     printf("the largest is %d, second largest is %d", max1, max2);
 }
-    int main()
+void sum()
+{
+    int s[100];
+    printf("Enter the array");
+    int sum_even = 0, sum_odd = 0;
+    for (int i = 0; i < 10; ++i)
     {
-        maxminarr();
+        scanf("%d", &s[i]);
+        if (s[i]%2 == 0)
+            sum_even = sum_even + s[i];
+        else 
+            sum_odd = sum_odd + s[i];
     }
+    printf("The sum of even numbers is %d and odd is %d", sum_even, sum_odd);
+}
+int main()
+{
+    sum();
+}
