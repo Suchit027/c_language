@@ -77,7 +77,46 @@ void question2()
         printf("%d", s[i]);
     }
 }
+void question3()
+{
+    int e, p, s[100], n;
+    printf("Enter the element and the position\n");
+    scanf("%d %d", &e, &p);
+    printf("Enter the length of original array\n");
+    scanf("%d", &n);
+    printf("Enter the original array\n");
+    for (int i = 0; i < n; ++i)
+    {
+        scanf("%d", &s[i]);
+    }
+    s[p - 1] = e;
+    for (int i = 0; i < n; ++i)
+    {
+        printf("%d", s[i]);
+    }
+}
+void question4()
+{
+    int p, s[100], n;
+    printf("Enter the position\n");
+    scanf("%d", &p);
+    printf("Enter the order of the array\n");
+    scanf("%d", &n);
+    printf("Enter the array\n");
+    for (int i = 0; i < n; ++i)
+    {
+        scanf("%d", &s[i]);
+    }
+    for (int i = p - 1; i < n; ++i)
+    {
+        s[i] = s[i + 1];
+    }
+    for (int i = 0; i < n - 1; ++i)
+    {
+        printf("%d", s[i]);
+    }
+}
 int main()
 {
-    question2();
+    question4();
 }
