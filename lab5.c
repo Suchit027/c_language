@@ -26,11 +26,11 @@ void question1()
 void question2()
 {
     int s[100], n;
-    char order;
-    printf("Enter a for ascending and d for descending order\n");
-    scanf("%c", &order);
+    char order  = '\0' ;
     printf("Enter the size of the array\n");
     scanf("%d", &n);
+    printf("Enter a for ascending and d for descending order\n");
+    scanf(" %c", &order);
     printf("Enter the array\n");
     for (int i = 0; i < n; ++i)
     {
@@ -118,5 +118,5 @@ void question4()
 }
 int main()
 {
-    question4();
+    question2();
 }
