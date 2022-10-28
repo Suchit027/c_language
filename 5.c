@@ -86,6 +86,59 @@ void sortdescending()
         printf("%d\t", s[i]);
     }
 }
+void selectionsort(){
+     int s[100], n;
+    char order  = '\0' ;
+    printf("Enter the size of the array\n");
+    scanf("%d", &n);
+    printf("Enter a for ascending and d for descending order\n");
+    scanf(" %c", &order);
+    printf("Enter the array\n");
+    for (int i = 0; i < n; ++i)
+    {
+        scanf("%d", &s[i]);
+    }
+    switch (order)
+    {
+    case 'a':
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = i; j < n; ++j)
+            {
+                int temp;
+                if (s[i] > s[j])
+                {
+                    temp = s[i];
+                    s[i] = s[j];
+                    s[j] = temp;
+                }
+            }
+        }
+        break;
+    case 'd':
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = i; j < n; ++j)
+            {
+                int temp;
+                if (s[i] < s[j])
+                {
+                    temp = s[i];
+                    s[i] = s[j];
+                    s[j] = temp;
+                }
+            }
+        }
+        break;
+    default:
+        printf("error");
+        break;
+    }
+    for (int i = 0; i < n; ++i)
+    {
+        printf("%d", s[i]);
+    }
+}
 int main()
 {
     sortdescending();
