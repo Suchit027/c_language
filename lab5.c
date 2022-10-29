@@ -39,11 +39,11 @@ void question2()
     switch (order)
     {
     case 'd':
-        for (int j = 0; j < n; ++j)
+        for (int i = 0; i < n; ++i)
         {
-            for (int i = 0; i < (n -i-1); ++i)
+            for (int j = 0; j < (n - i - 1); ++j)
             {
-                if (s[i] < s[i + 1])
+                if (s[j] < s[j + 1])
                 {
                     int temp;
                     temp = s[j];
@@ -56,7 +56,7 @@ void question2()
     case 'a':
         for (int j = 0; j < n; ++j)
         {
-            for (int i = 0; i < (n - j); ++i)
+            for (int i = 0; i < (n - j - 1); ++i)
             {
                 if (s[i] > s[i + 1])
                 {
