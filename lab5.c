@@ -26,44 +26,44 @@ void question1()
 void question2()
 {
     int s[100], n;
-    char order  = '\0' ;
+    char order;
+    printf("Enter a for ascending order and d for descending order\n");
+    scanf("%c", &order);
     printf("Enter the size of the array\n");
     scanf("%d", &n);
-    printf("Enter a for ascending and d for descending order\n");
-    scanf(" %c", &order);
-    printf("Enter the array\n");
+    printf("Enter the original array\n");
     for (int i = 0; i < n; ++i)
     {
         scanf("%d", &s[i]);
     }
     switch (order)
     {
-    case 'a':
+    case 'd':
         for (int i = 0; i < n; ++i)
         {
-            for (int j = i; j < n; ++j)
+            for (int j = 0; j < (n - i - 1); ++j)
             {
-                int temp;
-                if (s[i] > s[j])
+                if (s[j] < s[j + 1])
                 {
-                    temp = s[i];
-                    s[i] = s[j];
-                    s[j] = temp;
+                    int temp;
+                    temp = s[j];
+                    s[j] = s[j + 1];
+                    s[j + 1] = temp;
                 }
             }
         }
         break;
-    case 'd':
-        for (int i = 0; i < n; ++i)
+    case 'a':
+        for (int j = 0; j < n; ++j)
         {
-            for (int j = i; j < n; ++j)
+            for (int i = 0; i < (n - j - 1); ++i)
             {
-                int temp;
-                if (s[i] < s[j])
+                if (s[i] > s[i + 1])
                 {
+                    int temp;
                     temp = s[i];
-                    s[i] = s[j];
-                    s[j] = temp;
+                    s[i] = s[i + 1];
+                    s[i + 1] = temp;
                 }
             }
         }
@@ -79,41 +79,53 @@ void question2()
 }
 void question3()
 {
-    int e, p, s[100], n;
-    printf("Enter the element and the position\n");
-    scanf("%d %d", &e, &p);
-    printf("Enter the length of original array\n");
-    scanf("%d", &n);
-    printf("Enter the original array\n");
+    int e, p, s[100], n, c[100];
+    printf("Enter the element, its position and order of original array respectively");
+    scanf("%d %d %d", &e, &p, &n);
+    printf("Enter the array");
     for (int i = 0; i < n; ++i)
     {
         scanf("%d", &s[i]);
     }
-    s[p - 1] = e;
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < p - 1; ++i)
     {
-        printf("%d", s[i]);
+        c[i] = s[i];
+    }
+    c[p - 1] = e;
+    for (int i = p; i < n + 1; ++i)
+    {
+        c[i] = s[i - 1];
+    }
+    for (int i = 0; i < n + 1; ++i)
+    {
+        printf("%d", c[i]);
     }
 }
 void question4()
 {
-    int p, s[100], n;
-    printf("Enter the position\n");
-    scanf("%d", &p);
-    printf("Enter the order of the array\n");
-    scanf("%d", &n);
-    printf("Enter the array\n");
+    int s[100], e, n, c[100], count = 0;
+    printf("Enter the order of array and element");
+    scanf("%d%d", &n, &e);
+    printf("Enter the array");
     for (int i = 0; i < n; ++i)
     {
         scanf("%d", &s[i]);
     }
-    for (int i = p - 1; i < n; ++i)
+    for (int i = 0, j = 0; i < n; ++i)
     {
-        s[i] = s[i + 1];
+        if (s[i] == e)
+        {
+            ++count;
+        }
+        if (s[i] != e)
+        {
+            c[j] = s[i];
+            ++j;
+        }
     }
-    for (int i = 0; i < n - 1; ++i)
+    for (int i = 0; i < (n - count); ++i)
     {
-        printf("%d", s[i]);
+        printf("%d", c[i]);
     }
 }
 int main()
