@@ -86,7 +86,30 @@ void sortdescending()
         printf("%d\t", s[i]);
     }
 }
+void bubbleshort(){
+    int s[100], n;
+    printf("Enter the order");
+    scanf("%d", &n);
+    printf("Enter the array");
+    for(int i = 0; i < n ; ++i)
+    scanf("%d", &s[i]);
+    for(int i = 0; i < n-1; ++i){
+        int temp1, temp2;
+        if (s[i] > s[i+1]){
+            temp1 = s[i];
+            s[i] = s[i+1];
+            s[i+1] = temp1;
+        }
+        if(s[n - i -1] > s[n - i - 2]){
+            temp2 = s[n - i - 1];
+            s[n - i -1] = s[n - i -2];
+            s[n - i -2] = temp2;
+        }
+    }
+    for(int i = 0; i < n ; ++i)
+    printf("%d", s[i]);
+}
 int main()
 {
-    sortdescending();
+    bubbleshort();
 }
