@@ -166,5 +166,10 @@ void selectionsort(){
 }
 int main()
 {
+<<<<<<< HEAD:5.c
     bubbleshort();
 }
+=======
+    sortdescending();
+}
+>>>>>>> 1eac0c1 (Rename 5.c to Arrays):Arrays
