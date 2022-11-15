@@ -87,6 +87,7 @@ void sortdescending()
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 void bubbleshort(){
     int s[100], n;
     printf("Enter the order");
@@ -110,6 +111,8 @@ void bubbleshort(){
     for(int i = 0; i < n ; ++i)
     printf("%d", s[i]);
 =======
+=======
+>>>>>>> 02730db9e140744ebb7add9da7256b90b1fa1f09
 void selectionsort(){
      int s[100], n;
     char order  = '\0' ;
@@ -162,6 +165,7 @@ void selectionsort(){
     {
         printf("%d", s[i]);
     }
+<<<<<<< HEAD
 >>>>>>> 7550cb4 (array practise)
 }
 int main()
@@ -173,3 +177,10 @@ int main()
     sortdescending();
 }
 >>>>>>> 1eac0c1 (Rename 5.c to Arrays):Arrays
+=======
+}
+int main()
+{
+    sortdescending();
+}
+>>>>>>> 02730db9e140744ebb7add9da7256b90b1fa1f09
