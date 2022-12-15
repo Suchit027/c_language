@@ -73,7 +73,7 @@ void question4()
     printf("Enter the strings");
     for (int i = 0; i < n; i++)
     {
-        scanf("%s", s[i]);
+        scanf("%s", s[i]); //important
     }
     for (int i = 0; i < n - 1; ++i)
     {
@@ -108,7 +108,7 @@ void question5()
             ;
         if (k > 0 && w[k] == '\0')
         {
-            for (int p = i-1, m = j; s[m-1] != '\0'; ++p, ++m)
+            for (int p = i-1, m = j; s[m-1] != '\0'; ++p, ++m)// notice the space that is considered and the conditions checks for null character at position wanted
             {
                 s[p] = s[m];
             }
