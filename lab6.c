@@ -70,7 +70,7 @@ void question3()
     for (int i = 0; i < m; ++i)
     {
         for (int j = 0; j < n; ++j)
-            scanf("%d", &s[i][j]);
+            scanf("%d", &s[i][j]); // can input matrix in matrix for with this
     }
     printf("Enter the second matrix\n");
     for (int i = 0; i < r; ++i)
