@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 void q1_13()
 {
     int j, n, t = 0, num = 0;
@@ -76,7 +77,7 @@ void q1_22()
     gets(s);
     printf("Enter the coloumn\n");
     scanf("%d", &n);
-    for (i = n-1; s[i] != ' '; --i)
+    for (i = n - 1; s[i] != ' '; --i)
         ;
     if (s[i] == ' ')
         s[i] = '\n';
@@ -84,7 +85,65 @@ void q1_22()
         printf("error");
     puts(s);
 }
+float q4_2(char s[])
+{
+    double val1, power1 = 1.0, power2, val2;
+    int i, sign;
+    for (i = 0; isspace(s[i]); ++i)
+        ;
+    sign = (s[i] == '-') ? -1.0 : 1.0; /* Note how direct assignment '=' and ? have precedence*/
+    if (s[i] == '+' || s[i] == '-')
+        ++i;
+    for (val1 = 0.0; isdigit(s[i]); ++i)
+        val1 = 10.0 * val1 + (s[i] - '0');
+    if (s[i] == '.')
+    {
+        ++i;
+        for (power1 = 1.0; isdigit(s[i]); ++i)
+        {
+            val1 = 10.0 * val1 + (s[i] - '0');
+            power1 *= 10.0;
+        }
+    }
+    if (s[i] == 'e')
+    {
+        ++i;
+        if (s[i] == '+')
+        {
+            ++i;
+            for (val2 = 0.0; isdigit(s[i]); ++i)
+                val2 = 10.0 * val2 + (s[i] - '0');
+            for (power2 = 1.0; val2 > 0; --val2)
+            {
+                power2 *= 10.0;
+            }
+
+            return sign * val1 * power2 / power1;
+        }
+        else if (s[i] == '-')
+        {
+            ++i;
+            for (val2 = 0.0; isdigit(s[i]); ++i)
+                val2 = 10.0 * val2 + (s[i] - '0');
+            for (power2 = 1.0; val2 > 0; --val2)
+            {
+                power2 *= 10.0;
+            }
+
+            return (sign * val1) / (power2 * power1);
+        }
+    }
+}
 int main()
 {
-    q1_13();
+    int i;
+    char line[10];
+    for (i = 0; i < 5; i++)
+    {
+        scanf("%c", &line[i]);
+    }
+
+    line[i] = '\0';
+    float res = q4_2(line);
+    printf("%f", res);
 }
